@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  frontend: 
+    image: node:14
+    volumes:
+      - ./frontend:/code    
+    working_dir: /code
+    ports: 
+      - 3000:3000
+    networks:
+      - back-tier
+
+
+networks:
+  back-tier:
+    driver: bridge
